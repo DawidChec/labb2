@@ -1,36 +1,30 @@
 *** Settings ***
 Documentation   Information about accesing the website and using "reset button"
+Resource  ../Resources/keywords.robot
 Library  SeleniumLibrary
-Test Setup  Begin Web Test
-Test Teardown  End Web Test
+Suite Setup  Begin Web Test
+Suite Teardown  End Web Test
+
 *** Variables ***
 ${BROWSER}  chrome
 ${URL}  http://rental10.infotiv.net/
-${SEARCH_TERM}  0320
-*** Keywords ***
-Begin Web Test
-    Open Browser    about:blank  ${BROWSER}
-Go to Web Page
-    Go to  ${URL}
-Verify Page Loaded
-    Wait Until Page Contains  When do you want to make your trip?
-Choose date
-    Input Text  //*[@id="start"]  ${SEARCH_TERM}
-Press Reset Button
-    Press Keys  //*[@id="reset"]  RETURN
-End Web Test
-    Close Browser
+${SELECT_DATE}  0320
 
 *** Test Cases ***
-User can Acces Website and use Reset button
-    [Documentation]  Information about accesing the website and using "reset button"
+User Can Acces Website
+    [Documentation]  Rest Button Works
     [Tags]  Test 1
     Go to Web Page
-    Choose date
+    Verify Page Loaded
+    Choose Date
+    Verify Page Loaded
     Press Reset Button
 
-User Can Go back to Start Page while booking a car
-    [Documentation]  This is infomrmation about "Header" button.
+User Can Press Header button
+    [Documentation]  Header Button Works
     [Tags]  Test 2
     Go to Web Page
-    Press Reset Button
+    Verify Page Loaded
+    Press Continue Button
+    Car Page Shuold be Open
+    Press Header Button
