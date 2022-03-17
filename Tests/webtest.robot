@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation   Information about accesing the website and using "reset button"
+
+Documentation   Information about websites buttons
 Resource  ../Resources/keywords.robot
 Library  SeleniumLibrary
 Suite Setup  Begin Web Test
@@ -11,8 +12,8 @@ ${URL}  http://rental10.infotiv.net/
 ${SELECT_DATE}  0320
 
 *** Test Cases ***
-User Can Acces Website
-    [Documentation]  Rest Button Works
+User Can Press Reset Button
+    [Documentation]  Reset Button Works
     [Tags]  Test 1
     Go to Web Page
     Verify Page Loaded

@@ -1,3 +1,4 @@
+*** Keywords ***
 Begin Web Test
     Open Browser    about:blank  ${BROWSER}
 Go to Web Page
