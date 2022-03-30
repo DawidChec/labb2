@@ -6,7 +6,7 @@ Go to Web Page
 Verify Page Loaded
     Wait Until Page Contains  When do you want to make your trip?
 Choose Date
-    Input Text  //*[@id="start"]  ${SELECT_DATE}
+    Input Text  //*[@id="start"] ${current}
 Press Reset Button
     Press Keys  //*[@id="reset"]  RETURN
 Press Continue Button

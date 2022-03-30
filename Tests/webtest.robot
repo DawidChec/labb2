@@ -1,20 +1,20 @@
 *** Settings ***
-
 Documentation   Information about websites buttons
 Resource  ../Resources/keywords.robot
 Library  SeleniumLibrary
+Library  DateTime
 Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
 ${BROWSER}  chrome
 ${URL}  http://rental10.infotiv.net/
-${SELECT_DATE}  0320
+${current}
 
 *** Test Cases ***
 User Can Press Reset Button
     [Documentation]  Reset Button Works
-    [Tags]  Test 1
+    [Tags]  Date
     Go to Web Page
     Verify Page Loaded
     Choose Date
@@ -23,7 +23,7 @@ User Can Press Reset Button
 
 User Can Press Header button
     [Documentation]  Header Button Works
-    [Tags]  Test 2
+    [Tags]  Header
     Go to Web Page
     Verify Page Loaded
     Press Continue Button
