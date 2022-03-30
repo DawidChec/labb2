@@ -8,8 +8,10 @@ Suite Teardown  End Web Test
 
 *** Variables ***
 ${BROWSER}  chrome
-${URL}  http://rental10.infotiv.net/
-${current}
+${URL}  http://rental10.infotiv.net
+${date} =  Get Current Date
+${element_text}  Get Text
+${infotiv_date}  convert into date
 
 *** Test Cases ***
 User Can Press Reset Button
@@ -17,7 +19,7 @@ User Can Press Reset Button
     [Tags]  Date
     Go to Web Page
     Verify Page Loaded
-    Choose Date
+    Check Date On Page Start
     Verify Page Loaded
     Press Reset Button
 
@@ -29,3 +31,5 @@ User Can Press Header button
     Press Continue Button
     Car Page Shuold be Open
     Press Header Button
+    Verify Start Page Loaded
+
